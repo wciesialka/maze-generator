@@ -1,8 +1,6 @@
 #pragma once
 #include "Cell.h"
 
-typedef unsigned int size_t;
-
 class Grid
 {
     public:
