@@ -14,11 +14,16 @@ class Cell
         Cell(int x, int y);
         void addWall(Wall w);
         void removeWall(Wall w);
+        int getX() { return this->x; }
+        int getY() { return this->y; }
         bool hasWall(Wall w);
+        bool visited();
+        void visit();
     private:
         int x;
         int y;
         char walls;
+        bool wasVisited;
 };
 
 inline void Cell::addWall(Wall w)
@@ -34,4 +39,14 @@ inline void Cell::removeWall(Wall w)
 inline bool Cell::hasWall(Wall w)
 {
     return (this->walls & w) == w;
+}
+
+inline void Cell::visit()
+{
+    this->wasVisited = true;
+}
+
+inline bool Cell::visited()
+{
+    return this->wasVisited;
 }
