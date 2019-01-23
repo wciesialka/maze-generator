@@ -10,7 +10,7 @@
 
 #define WIDTH 600
 #define HEIGHT 600
-#define CELL_SIZE 5
+#define CELL_SIZE 10
 #define G_WIDTH (WIDTH/CELL_SIZE)
 #define G_HEIGHT (HEIGHT/CELL_SIZE)
 #define TITLE "Maze Generator"
@@ -145,6 +145,10 @@ void update(Grid* g, sf::RenderWindow * window)
             }
         }
     }
+    sf::RectangleShape c_box = sf::RectangleShape(sf::Vector2f(CELL_SIZE,CELL_SIZE));
+    c_box.setPosition(sf::Vector2f((current->getX() * CELL_SIZE),(current->getY() * CELL_SIZE)));
+    c_box.setFillColor(sf::Color::Green);
+    window->draw(c_box);
 }
 
 int main()
